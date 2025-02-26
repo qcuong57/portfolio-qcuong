@@ -5,6 +5,7 @@ import GitLanguage from "./components/language";
 import Projects from "./components/projects";
 import Rank from "./components/rank";
 import GitStats from "./components/stats";
+import IndexPage from "./components/information";
 
 async function getGitProfile() {
   const res = await fetch(`https://api.github.com/users/${userData.githubUser}`)
@@ -31,6 +32,7 @@ export default async function Home() {
 
   return (
     <>
+      <IndexPage />
       <HeroSection profile={profile} />
       <GitStats />
       <Projects
