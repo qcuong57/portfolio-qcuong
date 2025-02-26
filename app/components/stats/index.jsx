@@ -14,6 +14,7 @@ function GitStats() {
     stats2: false,
   });
 
+  // Helper function to handle image errors
   const handleImageError = (imageKey) => {
     console.error(`Failed to load GitHub ${imageKey} image`);
     setImageErrors((prev) => ({
@@ -22,6 +23,7 @@ function GitStats() {
     }));
   };
 
+  // Function to render image with error handling
   const renderGitHubImage = ({ src, alt, identifier, imageKey }) => (
     <GlowCard identifier={identifier}>
       {imageErrors[imageKey] ? (
